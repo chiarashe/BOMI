@@ -1,0 +1,27 @@
+
+<%# patient %>
+<div class="container">
+  <% if current_user.patient? %>
+  <h2>Gracias por registrarte, <%= @user.first_name %>!<h2>
+  <p>Cual es tu meta?</p>
+      <%= simple_form_for @user, url: update_profile_path do |f| %>
+        <%= f.input :goal %>
+        <%= f.input :date_birth %>
+        <%= f.button :submit %>
+      <% end %>
+  <% end %>
+</div>
+
+<%#doctor %>
+<div class="container">
+  <% if current_user.doctor? %>
+  <h2>Gracias por registrarte,<%= @user.first_name %>! Necesitamos más informacion para completar tu registro<h2>
+      <%= simple_form_for @user, url: update_profile_path do |f| %>
+        <%= f.input :location, label: "Ciudad" %>
+        <%= f.input :date_birth, label: "Fecha de nacimiento" %>
+        <%= f.input :cedula_profesional, label: "Cedula profesional" %>
+        <%= f.input :profession, label: "Tipo de Profesional de la Salud" %>
+        <%= f.button :submit %>
+      <% end %>
+  <% end %>
+</div>
