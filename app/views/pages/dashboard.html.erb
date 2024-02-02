@@ -1,10 +1,15 @@
+<%# patient %>
 <div class="container">
   <% if current_user.patient? %>
-  <h2>Gracias por registrarte, <%= @user.first_name %>!<h2>
-  <p>Cual es tu meta?</p>
-      <%= simple_form_for @user do |f| %>
-        <%= f.input :goal %>
-        <%= f.button :submit %>
-      <% end %>
+    <h2>Hola <%= @user.first_name %>!<h2>
+    <p>Tu meta: <%= @user.goal %></p>
+  <% end %>
+</div>
+
+<%# doctor %>
+<div class="container">
+  <% if current_user.doctor? %>
+    <h2>Hola <%= @user.first_name %>!<h2>
+    <p>Ciudad: <%= @user.location %></p>
   <% end %>
 </div>
