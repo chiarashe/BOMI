@@ -7,6 +7,8 @@ class User < ApplicationRecord
   ROLES = %w(Patient Doctor)
   validates :role, inclusion: { in: ROLES }
 
+  PROFESSION = %w(Médico Nutriólogo Psicólogo Psiquiatra Terapeuta)
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :phone_number, presence: true, uniqueness: true
@@ -14,7 +16,7 @@ class User < ApplicationRecord
   has_many :reports, dependent: :destroy
   has_one_attached :photo
 
-  has_many :doctors, dependent: :destroy
+  has_many :doctors, through: :reports, source: :reports, dependent: :destroy
   has_many :patients, through: :reports, source: :reports, dependent: :destroy
 
   def profile_completed?
@@ -27,7 +29,6 @@ class User < ApplicationRecord
       false
     end
   end
-
 
   def patient?
     role == "Patient"

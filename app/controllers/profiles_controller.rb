@@ -15,6 +15,6 @@ class ProfilesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:goal, :date_birth, :location, :cedula_profesional, :CURP, :profession) # add other attributes as needed
+    params.require(:user).permit(:date_birth, :location, :cedula_profesional, :CURP, :profession, :goal) # add other attributes as needed
   end
 end
