@@ -2,8 +2,10 @@
 <div class="container">
   <% if current_user.patient? %>
     <h2>Hola <%= @user.first_name %>!<h2>
-    <p>Tu meta: <%= @user.goal %></p>
+    <p>Meta: <%= @user.goal %></p>
+     <button type="button" class="btn btn-outline-light rounded-pill ms-2"><%= link_to "Edit my info", edit_user_registration_path, class:"text-decoration-none"%></button>
   <% end %>
+
 </div>
 
 <%# doctor %>
@@ -11,5 +13,7 @@
   <% if current_user.doctor? %>
     <h2>Hola <%= @user.first_name %>!<h2>
     <p>Ciudad: <%= @user.location %></p>
+    <p>Tipo de Médico: <%= @user.profession %></p>
+    <button type="button" class="btn btn-outline-light rounded-pill ms-2"><%= link_to "Edit my info", edit_user_registration_path, class:"text-decoration-none"%></button>
   <% end %>
 </div>

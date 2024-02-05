@@ -5,7 +5,7 @@
   <h2>Gracias por registrarte, <%= @user.first_name %>!<h2>
   <p>Cual es tu meta?</p>
       <%= simple_form_for @user, url: update_profile_path do |f| %>
-        <%= f.input :goal %>
+        <%= f.input :goal, collection: ['Mejorar la relación con la comida y mi cuerpo', 'Enteder mejor a mi cuerpo y mi mente', 'Tener un tracking'], input_html: { multiple: true } %>
         <%= f.input :date_birth %>
         <%= f.button :submit %>
       <% end %>
@@ -20,7 +20,7 @@
         <%= f.input :location, label: "Ciudad" %>
         <%= f.input :date_birth, label: "Fecha de nacimiento" %>
         <%= f.input :cedula_profesional, label: "Cedula profesional" %>
-        <%= f.input :profession, label: "Tipo de Profesional de la Salud" %>
+        <%= f.input :profession, as: :select, collection: User::PROFESSION, label: "Tipo de Profesional de la Salud" %>
         <%= f.button :submit %>
       <% end %>
   <% end %>
