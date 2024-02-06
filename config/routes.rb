@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   resources :patients, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :reports, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   end
-  resources :blog, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-
+  resources :blogs, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :recommendations, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   # Defines the root path route ("/")
   # root "posts#index"
 end

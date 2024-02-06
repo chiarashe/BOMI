@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>Crear un nuevo blog</h2>
+ <%= simple_form_for @blog do |f| %>
+    <%= f.input :titulo %>
+    <%= f.input :texto %>
+    <%= f.input :tema_tipo %>
+    <%= f.input :contenido_tipo %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
