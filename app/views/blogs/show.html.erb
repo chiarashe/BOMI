@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>Detales de tu contenido</h2>
+    <%= @blog.titulo %>
+    <%= @blog.texto %>
+    <%= @blog.tema_tipo %>
+    <%= @blog.contenido_tipo %>
+    <button type="button" class="btn btn-outline-light rounded-pill ms-2"><%= link_to "Cambiar la info", edit_blog_path, class:"text-decoration-none"%></button>
+    <button type="button" class="btn btn-outline-light rounded-pill ms-2"><%= link_to "Volver a la lista", blogs_path, class:"text-decoration-none"%></button>
+    <%= link_to "Delete 🗑️", blog_path(@blog), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:"text-decoration-none text-secondary"%>
+</div>

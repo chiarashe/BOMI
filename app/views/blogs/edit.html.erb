@@ -1,0 +1,14 @@
+<div class="container my-4">
+  <div class="row d-flex justify-content-center">
+    <div class="col-6 bg-white p-4 shadow" style="border-radius: 20px;">
+        <%= simple_form_for(@blog) do |f| %>
+          <h2>Editar tu contenido</h2>
+          <%= f.input :titulo, label: "Titulo" %>
+          <%= f.input :texto, label: "Texto" %>
+          <%= f.input :tema_tipo, label: "Tema" %>
+          <%= f.input :contenido_tipo, label: "Tipo de contenido" %>
+          <%= f.button :submit, "Edit my info", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+  </div>
+</div>

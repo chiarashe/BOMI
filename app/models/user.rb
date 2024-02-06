@@ -19,6 +19,8 @@ class User < ApplicationRecord
   has_many :doctors, through: :reports, source: :reports, dependent: :destroy
   has_many :patients, through: :reports, source: :reports, dependent: :destroy
 
+  has_many :blogs
+
   def profile_completed?
     common_fields = [first_name, last_name, phone_number, email, role].all?(&:present?)
     if doctor?

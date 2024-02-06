@@ -9,6 +9,8 @@
 </div>
 
 <%# doctor %>
+
+<%# doctor information %>
 <div class="container">
   <% if current_user.doctor? %>
     <h2>Hola <%= @user.first_name %>!<h2>
@@ -16,4 +18,13 @@
     <p>Tipo de Médico: <%= @user.profession %></p>
     <button type="button" class="btn btn-outline-light rounded-pill ms-2"><%= link_to "Edit my info", edit_user_registration_path, class:"text-decoration-none"%></button>
   <% end %>
+
+<%# blog %>
+  <div class="container blog">
+    <h2>Conenido<h2>
+
+
+  </div>
+
+
 </div>

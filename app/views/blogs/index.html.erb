@@ -1,0 +1,9 @@
+<div class= "container">
+  <h2>Todo el contenido</h2>
+    <% @blogs.each do |blog| %>
+      <h3>Titulo<%= blog.titulo %></h3>
+      <p>Texto<%= blog.texto %></p>
+      <p>Tema<%= blog.tema_tipo %></p>
+      <p>Tipo<%= blog.contenido_tipo %></p>
+    <% end %>
+</div>
